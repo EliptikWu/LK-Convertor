@@ -13,7 +13,6 @@ def write_yml(file_path, data):
 def main_menu():
     print("Preconfiguración de archivo .yml")
     
-    # Preguntar por el nombre del archivo .yml al inicio
     file_name = input("Ingrese el nombre del archivo (sin extensión .yml): ") + ".yml"
     
     estructura = input("Elija la estructura ('Oraxen' o 'IA'): ").strip().lower()
