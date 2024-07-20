@@ -20,19 +20,21 @@ def main_menu():
     namespace = "lk"
     configuraciones = {}
     if estructura == 'ia':
-        namespace = input("Ingrese la palabra que desea agregar al namespace: ")
+        namespace = input("Ingrese la palabra que desea agregar al namespace para IA: ")
         configuraciones = {
             'info': {
                 'namespace': namespace
             },
             'items': {}
         }
+    elif estructura == 'oraxen':
+        namespace = input("Ingrese la palabra que desea agregar al namespace para Oraxen: ")
 
     directory_path = os.getcwd()
-    archivos = [f for f in os.listdir(directory_path) if os.path.isfile(os.path.join(directory_path, f))]
+    archivos = [f for f in os.listdir(directory_path) if os.path.isfile(os.path.join(directory_path, f)) and f.lower().endswith(('.png', '.jpg'))]
     
     material = input("Ingrese el material para todos los ítems: ").upper()
-    custom_model_data = 1780  
+    custom_model_data = int(input("Ingrese el número inicial para 'custom_model_data': "))  
     
     for i, archivo in enumerate(archivos):
         print(f"\nIteración {i + 1}")
@@ -47,7 +49,7 @@ def main_menu():
                     'generate_model': True,
                     'parent_model': DoubleQuotedScalarString("item/handheld"),
                     'custom_model_data': custom_model_data,
-                    'textures': [f'item/{nombre}']
+                    'textures': [f'{namespace}:item/{nombre}']
                 }
             }
         elif estructura == 'ia':
