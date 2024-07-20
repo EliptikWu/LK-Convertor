@@ -47,7 +47,7 @@ def main_menu():
                 'material': material,
                 'Pack': {
                     'generate_model': True,
-                    'parent_model': DoubleQuotedScalarString("item/handheld"),
+                    'parent_model': DoubleQuotedScalarString("item/generated"),
                     'custom_model_data': custom_model_data,
                     'textures': [f'{namespace}:item/{nombre}']
                 }
