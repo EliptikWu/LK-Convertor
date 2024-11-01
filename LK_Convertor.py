@@ -49,7 +49,7 @@ def main_menu():
                     'generate_model': True,
                     'parent_model': DoubleQuotedScalarString("item/generated"),
                     'custom_model_data': custom_model_data,
-                    'textures': [f'{namespace}:item/{nombre}']
+                    'textures': [f'{namespace}:custom/items/{nombre}']
                 }
             }
         elif estructura == 'ia':
@@ -59,7 +59,7 @@ def main_menu():
                     'material': material,
                     'generate': True,
                     'model_id': custom_model_data,
-                    'textures': [f'item/{nombre}']
+                    'textures': [f'custom/items/{nombre}']
                 }
             }
         
